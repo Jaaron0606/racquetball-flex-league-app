@@ -25,6 +25,7 @@ Git Aliases:
     s = status
     a = add
     c = commit -m
+    b = branch
 ```
 Side note: `git ls` can take additional flags (like `git ls -5` to limit the list to 5 items).
 * Also, running `export TZ=EST` will specify Eastern time in from `git ls`
