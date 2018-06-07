@@ -5,3 +5,9 @@ Setting up a website for Sportsclub Racquetball Flex Leagues.
 - [ ] Review user stories priorities and define critical views
 - [ ] Create necessary view templates and prototype routing
 - [ ] Define static pages versus interactive pages
+- [ ] Build 4 views
+  - [ ] Landing page (general league info)
+  - [ ] Users league standings (logged in landing page)
+  - [ ] Matches view with edit buttons (detail view with individual game scores)
+  - [ ] Match score enter view (form)
+- [ ] How to deal with hosting the database on Heroku alongside the app?
