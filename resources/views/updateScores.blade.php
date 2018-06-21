@@ -62,13 +62,99 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            
+            .row {
+              margin-top: 5px;
+              line-height: 30px;
+            }
         </style>
     </head>
     <body>
         <div class="content">
-            <div class="title m-b-md">
-                Update Match Score
-            </div>
+            
+            <!-- create.blade.php -->
+
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>  
+
+    <div class="container">
+      <h2>Update Match Score</h2><br/>
+      <form method="post" action="{{url('passports')}}" enctype="multipart/form-data">
+        @csrf
+        
+        <div class="row">
+          <!-- Blank column to center -->
+          <div class="col-md-4"></div>
+          
+          <!-- Blank space over game numbers -->
+          <div class="col-md-2 col-xs-4"></div>
+          
+          <div class="col-md-1 col-xs-4">Player</div>
+          <div class="col-md-1 col-xs-4">Opponent</div>
+        </div>
+       
+        <div class="row">
+          <!-- Blank column to center -->
+          <div class="col-md-4"></div>
+          
+          <div class="col-md-2 col-xs-4">Game 1</div>
+          <div class="col-md-1 col-xs-4">
+            <input type="number" max="15" min="0" class="form-control" name="game1player1score">
+          </div>
+          <div class="col-md-1 col-xs-4">
+            <input type="number" max="15" min="0" class="form-control" name="game1player1score">
+          </div>
+        </div>  
+          
+        <div class="row">
+          <!-- Blank column to center -->
+          <div class="col-md-4"></div>
+          
+          <div class="col-md-2 col-xs-4">Game 2</div>
+          <div class="col-md-1 col-xs-4">
+            <input type="number" max="15" min="0" class="form-control" name="game1player1score">
+          </div>
+          <div class="col-md-1 col-xs-4">
+            <input type="number" max="15" min="0" class="form-control" name="game1player1score">
+          </div>
+        </div>
+        
+        <div class="row">
+          <!-- Blank column to center -->
+          <div class="col-md-4"></div>
+          
+          <div class="col-md-2 col-xs-4">Game 3</div>
+          <div class="col-md-1 col-xs-4">
+            <input type="number" max="11" min="0" class="form-control" name="game1player1score">
+          </div>
+          <div class="col-md-1 col-xs-4">
+            <input type="number" max="11" min="0" class="form-control" name="game1player1score">
+          </div>
+        </div>
+          
+        <div class="row" style="margin-top:10px">
+          <!-- Blank column to center -->
+          <div class="col-md-4"></div>
+          
+          <!-- Blank space over game numbers -->
+          <div class="col-md-2 col-xs-4">Total</div>
+          
+          <div class="col-md-1 col-xs-4">Player</div>
+          <div class="col-md-1 col-xs-4">Opponent</div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="form-group col-md-4" style="margin-top:30px">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
 
             <!--
                 Form block: x is user input block
