@@ -2,16 +2,18 @@
 Setting up a website for Sportsclub Racquetball Flex Leagues.
 
 ## To do in views-scaffold:
-- [ ] Review user stories priorities and define critical views
+- [x] Review user stories priorities and define critical views
 - [ ] Create necessary view templates and prototype routing
 - [x] Define static pages versus interactive pages
 - [ ] Build 4 views
   - [ ] Landing page (general league info)
   - [ ] Users league standings (logged in landing page)
   - [ ] Matches view with edit buttons (detail view with individual game scores)
-  - [ ] Match score enter view (form)
-- [ ] How to deal with hosting the database on Heroku alongside the app?
+  - [x] Match score enter view (form)
+- [x] How to deal with hosting the database on Heroku alongside the app?
   * This could be sqlite, so we don't need a mySQL server
 - [x] 19June: Research how to make a new Model / table in database and CRUD actions
 - [x] 19June: Sketch out what will be in each of the views (from the data)
-- [ ] How to deal with hosting the database on Heroku alongside the app?
+- [ ] 24June: Verify match and game factories and create seeders
+- [ ] 24June: Test seeders
+- [ ] 24June: Build view with seeded data
