@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGamesTable extends Migration
+class CreateMatchesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,18 @@ class CreateGamesTable extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
+        Schema::create('matches', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->string('player_one');
             $table->string('player_two');
-            $table->integer('player_one_score')->nullable();
-            $table->integer('player_two_score')->nullable();
             
-            // This will reference the match table primary key (foreigh key)
-            // if we use a match table in the data structure.
-            $table->unsignedInteger('match_id');
+            // This could be the name of the league, or the league id from a leagues table.
+            // $table->string('league_name');
+            
+            // This could be the name of the division (skill level), or the division id...
+            // $table->string('division_name');
             
             $table->timestamps();
-            $table->string('last_updated_by');
         });
     }
 
@@ -36,6 +35,6 @@ class CreateGamesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('games');
+        Schema::dropIfExists('matches');
     }
 }
