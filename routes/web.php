@@ -44,3 +44,8 @@ Route::get('/test', function () {
 Route::get('/update', function () {
   return view('updateScores');
 });
+
+/**
+ * This route registers the database update routes for the games model.
+ */ 
+Route::resource('games', 'GameController');

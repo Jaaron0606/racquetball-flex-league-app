@@ -14,3 +14,4 @@ Setting up a website for Sportsclub Racquetball Flex Leagues.
   * This could be sqlite, so we don't need a mySQL server
 - [x] 19June: Research how to make a new Model / table in database and CRUD actions
 - [x] 19June: Sketch out what will be in each of the views (from the data)
+- [ ] How to deal with hosting the database on Heroku alongside the app?
