@@ -11,14 +11,20 @@ class MatchesTableSeeder extends Seeder
      */
     public function run()
     {
-        // $matches = factory(App\Match::class, 5)
-        //   ->create()
-        //   ->each(function ($match) {
-        //         $match->games()->save(factory(App\Game::class, 3)->make());
-        //     });
+        // $games = factory(App\Game::class, 3)->create(['match_id' => $matches[0]->id]);
+        $games = factory(App\Game::class, 3)->make();
         
-        $matches = factory(App\Match::class, 5)->make();
+        echo $games;
         
-        echo $matches;
+        $matches = factory(App\Match::class, 5)
+          ->create()
+          ->each(function ($match) {
+                $match->games()->save($games);
+            });
+        
+        // $matches = factory(App\Match::class, 5)->create();
+        
+        // echo PHP_EOL;
+        echo "Success\n";
     }
 }
