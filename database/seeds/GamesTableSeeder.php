@@ -11,10 +11,6 @@ class GamesTableSeeder extends Seeder
      */
     public function run()
     {
-        $matches = factory(App\Match::class, 5)
-           ->create()
-           ->each(function ($match) {
-                $match->games()->save(factory(App\Game::class, 3)->make());
-            });
+        // Seeding instructions here...
     }
 }
