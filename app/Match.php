@@ -10,6 +10,6 @@ class Match extends Model
     
     public function games()
     {
-      $this->hasMany('App\Game');
+      return $this->hasMany('App\Game');
     }
 }
