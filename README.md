@@ -14,6 +14,10 @@ Setting up a website for Sportsclub Racquetball Flex Leagues.
   * This could be sqlite, so we don't need a mySQL server
 - [x] 19June: Research how to make a new Model / table in database and CRUD actions
 - [x] 19June: Sketch out what will be in each of the views (from the data)
-- [ ] 24June: Verify match and game factories and create seeders
-- [ ] 24June: Test seeders
+- [x] 24June: Verify match and game factories and create seeders
+- [x] 24June: Test seeders
 - [ ] 24June: Build view with seeded data
+- [x] 25June: Figure out why database relationships aren't working as defined.
+  * Example in Laravel docs looks identical in structure, but doesn't work.
+  * Turns out, I was missing a 'return' in the relationships definition.
+  * Whoops.
