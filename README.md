@@ -21,3 +21,5 @@ Setting up a website for Sportsclub Racquetball Flex Leagues.
   * Example in Laravel docs looks identical in structure, but doesn't work.
   * Turns out, I was missing a 'return' in the relationships definition.
   * Whoops.
+
+# New Alias! alias test=' ./vendor/bin/phpunit'
