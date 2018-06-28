@@ -16,4 +16,17 @@ class ExampleTest extends TestCase
     {
         $this->assertTrue(true);
     }
+    
+    public function testModelSeeders()
+    {
+        $test = \App\Game::find(10)->match;
+        $player = $test->player_one;
+        // $test2 = \App\Game
+        
+        echo PHP_EOL;
+        echo $player;
+        echo "\nSuccess\n";
+        
+        $this->assertTrue(true);
+    }
 }
