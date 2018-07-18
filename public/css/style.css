@@ -1,0 +1,50 @@
+.card-deck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap-reverse;
+}
+
+.card {
+  min-width: 14rem;
+  width: 100%;
+  max-width: 18rem;
+}
+
+.card-header {
+  font-size: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+table {
+  width: 100%!important;
+}
+
+th {
+  padding-bottom: 0.25rem;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.container {
+  max-width: 960px;
+}
+
+
+
+
