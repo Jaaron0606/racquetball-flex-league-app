@@ -22,7 +22,8 @@ Route::get('/', function () {
 });
 
 
-/**
+
+/** views-scaffold
  * This route shows the user her current league rankings, with her name and
  * current point total highlighted. Underneath the ranking table, the she can
  * see individual match and game scores, with the ability to edit. 
@@ -49,3 +50,8 @@ Route::get('/update', function () {
  * This route registers the database update routes for the games model.
  */ 
 Route::resource('games', 'GameController');
+=======
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
