@@ -1,6 +1,13 @@
 # racquetball-flex-league-app
 Setting up a website for Sportsclub Racquetball Flex Leagues.
 
+## Setup users: 
+- [x] set up sqlite database (https://scotch.io/@goodnesskay/developing-locally-using-sqlite-with-laravel-on-ubuntu)
+- [x] set up admin and users roles (https://www.youtube.com/watch?v=xjLLr4WQWzw)
+- [] set up adminHome page so that admin and see users
+- [] use php artisa tinker to get to data
+
+
 ## To do in views-scaffold:
 - [x] Review user stories priorities and define critical views
 - [ ] Create necessary view templates and prototype routing
