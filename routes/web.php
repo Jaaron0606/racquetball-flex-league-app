@@ -50,7 +50,7 @@ Route::get('/update', function () {
  * This route registers the database update routes for the games model.
  */ 
 Route::resource('games', 'GameController');
-=======
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

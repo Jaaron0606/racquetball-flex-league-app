@@ -120,6 +120,58 @@
               </table>
             </div>
           </div>
+          
+          <?php
+            $games = \App\Game::all();
+            
+            $player_scores = [];
+            
+            foreach ($games as $game) {
+              $p1 = $game->match->player_one;
+              $p1_score = $game->player_one_score;
+              $p2 = $game->match->player_two;
+              $p2_score = $game->player_two_score;
+              
+              $p2_score > $p1_score ? $p2_score += 5 : $p1_score += 5;
+              
+              if (array_key_exists($p1, $player_scores)) {
+                $player_scores[$p1] += $p1_score;
+              } else {
+                $player_scores[$p1] = $p1_score;
+              }
+              
+              if (array_key_exists($p2, $player_scores)) {
+                $player_scores[$p2] += $p2_score;
+              } else {
+                $player_scores[$p2] = $p2_score;
+              }
+            }
+            
+            arsort($player_scores);
+          ?>
+          
+          <div class="card border-dark mb-3">
+            <div class="card-header border-dark">Open/A Singles</div>
+            <div class="card-body text-dark">
+              <table>
+                <tr class="card-title">
+                  <th>Player</th>
+                  <th>Score</th>
+                  <th>Games</th>
+                </tr>
+                
+                @foreach (array_keys($player_scores) as $name)
+                  <tr class="card-text">
+                    <td>{{ $name }}</td>
+                    <td>{{ $player_scores[$name] }}</td>
+                    <td>1 / 1</td>
+                  </tr>
+                @endforeach
+                
+              </table>
+            </div>
+          </div>
+          
           <div class="card border-light mb-3">
             <div class="card-header border-light">Header</div>
             <div class="card-body text-dark">
