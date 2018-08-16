@@ -23,7 +23,7 @@ class UsersTableSeeder extends Seeder
             $user = array_pop($users);
             
             foreach ($users as $opponent) {
-                factory(App\Match::class, 5)
+                factory(App\Match::class, 1)
                     ->create(['player_one' => $user->name,
                               'player_two' => $opponent->name])
                     ->each(function ($match) {
