@@ -11,15 +11,10 @@ class MatchesTableSeeder extends Seeder
      */
     public function run()
     {
-        $matches = factory(App\Match::class, 5)
+        factory(App\Match::class, 5)
           ->create()
           ->each(function ($match) {
                 factory(App\Game::class, 3)->create(['match_id' => $match->id]);
             });
-        
-        $test = App\Game::find(10)->match;
-        
-        echo $test;
-        echo "Success\n";
     }
 }
