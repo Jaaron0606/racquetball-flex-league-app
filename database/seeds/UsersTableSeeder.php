@@ -24,8 +24,8 @@ class UsersTableSeeder extends Seeder
             
             foreach ($users as $opponent) {
                 factory(App\Match::class, 1)
-                    ->create(['player_one' => $user->name,
-                              'player_two' => $opponent->name])
+                    ->create(['player_one' => $user->id,
+                              'player_two' => $opponent->id])
                     ->each(function ($match) {
                         factory(App\Game::class, 3)->create(['match_id' => $match->id]);
                     });
