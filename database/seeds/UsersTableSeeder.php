@@ -23,9 +23,9 @@ class UsersTableSeeder extends Seeder
         $cr8n_obj = factory(\App\User::class, 1)->create(
             ['name' => 'Creighton Magoun',
              'email' => 'magoun@gmail.com',
-             'password' => 'password']);
+             'password' => bcrypt('password')]);
              
-             
+        array_push($users, $cr8n_obj[0]);
         
         while (count($users) > 1) {
             $user = array_pop($users);

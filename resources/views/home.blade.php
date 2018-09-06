@@ -19,7 +19,7 @@
                     <?php
                         $users = \App\User::all();
                         
-                        dd($users);
+                        // dd($users);
                     ?>
                     
                 </div>
