@@ -60,4 +60,23 @@ class ExampleTest extends TestCase
         
         $this->assertTrue(true);
     }
+    
+    public function testFactoryLogic()
+    {
+        echo PHP_EOL;
+        echo "What type does a factory return?";
+        
+        $cr8n_obj = factory(\App\User::class, 1)->create(
+            ['name' => 'Creighton Magoun',
+             'email' => 'magoun@gmail.com',
+             'password' => 'password']);
+             
+             
+        var_dump($cr8n_obj);
+        echo PHP_EOL;
+        echo gettype($cr8n_obj);
+        echo PHP_EOL;
+        
+        $this->assertTrue(true);
+    }
 }

@@ -19,16 +19,37 @@ class UsersTableSeeder extends Seeder
             array_push($users, $user);
         }
         
+        // Add myself, for testing
+        $cr8n_obj = factory(\App\User::class, 1)->create(
+            ['name' => 'Creighton Magoun',
+             'email' => 'magoun@gmail.com',
+             'password' => 'password']);
+             
+             
+        
         while (count($users) > 1) {
             $user = array_pop($users);
             
             foreach ($users as $opponent) {
-                factory(App\Match::class, 1)
-                    ->create(['player_one' => $user->id,
-                              'player_two' => $opponent->id])
-                    ->each(function ($match) {
-                        factory(App\Game::class, 3)->create(['match_id' => $match->id]);
-                    });
+                $id = DB::table('matches')->insertGetId(
+                    ['player_one_id' => $user->id,
+                     'player_two_id' => $opponent->id,
+                     'league_name' => 'Test League',
+                     'division_name' => 'PHP Elite']
+                );
+                
+                factory(App\Game::class, 3)->create(['match_id' => $id]);
+                
+                
+                
+                // Old way, with Match Factory
+                
+                // factory(App\Match::class, 1)
+                //     ->create(['player_one_id' => $user->id,
+                //               'player_two_id' => $opponent->id])
+                //     ->each(function ($match) {
+                //         factory(App\Game::class, 3)->create(['match_id' => $match->id]);
+                //     });
             }
         }
         
