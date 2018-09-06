@@ -66,13 +66,9 @@ class ExampleTest extends TestCase
         echo PHP_EOL;
         echo "What type does a factory return?";
         
-        $cr8n_obj = factory(\App\User::class, 1)->create(
-            ['name' => 'Creighton Magoun',
-             'email' => 'magoun@gmail.com',
-             'password' => 'password']);
+        $cr8n_obj = factory(\App\User::class, 5)->make();
              
-             
-        var_dump($cr8n_obj);
+        // var_dump($cr8n_obj);
         echo PHP_EOL;
         echo gettype($cr8n_obj);
         echo PHP_EOL;
