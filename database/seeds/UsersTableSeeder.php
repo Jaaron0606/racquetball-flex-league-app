@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
         }
         
         // Add myself, for testing
-        $cr8n_obj = factory(\App\User::class, 1)->create(
+        $cr8n_obj = factory(App\User::class, 1)->create(
             ['name' => 'Creighton Magoun',
              'email' => 'magoun@gmail.com',
              'password' => bcrypt('password')]);
@@ -40,16 +40,9 @@ class UsersTableSeeder extends Seeder
                 
                 factory(App\Game::class, 3)->create(['match_id' => $id]);
                 
-                
-                
-                // Old way, with Match Factory
-                
-                // factory(App\Match::class, 1)
-                //     ->create(['player_one_id' => $user->id,
-                //               'player_two_id' => $opponent->id])
-                //     ->each(function ($match) {
-                //         factory(App\Game::class, 3)->create(['match_id' => $match->id]);
-                //     });
+                // Link the match to the players in the database
+                $user->matches()->attach($id);
+                $opponent->matches()->attach($id);
             }
         }
         
