@@ -42,7 +42,9 @@ September 5
     * Now I can log in (password = password) to test that the views are working.
     * This login will persist even on database resets, as long as the seeder runs.
 - [x] Need to link matches and users, still
-- [ ] Need to add match totals to match table (seeder?)
+- [x] Need to add match totals to match table (seeder?)
 
 September 16
 - [ ] Add functionality to upload a .csv to seed the database?
+- Turns out, for phpunit to run tests, the method names have to start with 'test'
+- 

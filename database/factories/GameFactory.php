@@ -4,7 +4,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Game::class, function (Faker $faker) {
     $winner = rand(1,2);
-    $loser_score = rand(0,10);
+    $loser_score = rand(4,14);
     
     if ($winner == 1) {
         return [
