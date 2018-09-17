@@ -12,4 +12,10 @@ class Match extends Model
     {
       return $this->hasMany('App\Game');
     }
+    
+    public function users()
+    {
+      return $this->belongsToMany('App\User')
+        ->withTimestamps();
+    }
 }

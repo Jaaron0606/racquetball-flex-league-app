@@ -26,4 +26,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    protected function matches()
+    {
+        return $this->belongsToMany('App/Match')
+            ->withTimestamps();
+    }
 }
