@@ -75,4 +75,15 @@ class ExampleTest extends TestCase
         
         $this->assertTrue(true);
     }
+    
+    public function testMatchUserRelationship()
+    {
+        $user = \App\User::first();
+        $match = \App\Match::first();
+        
+        $userHasMatches = $user->matches->count() > 0;
+        $matchHasUsers = $match->users->count() == 2;
+        
+        $this->assertTrue($userHasMatches && $matchHasUsers);
+    }
 }

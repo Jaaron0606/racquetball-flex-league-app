@@ -38,10 +38,9 @@ August 2
 - [x] Seed database with 4 players, with round robbin matches
 
 August 24
-- [ ] Create many-to-many relationship between users table and matches table
+- [x] Create many-to-many relationship between users table and matches table
 - [x] Update 'test' code to test new table structure
 - [ ] Refactor score display logic to use match score from table
-- [ ] Testing idea: Write seeder to add in previous season data for one division.
 - [ ] Add navigation bar and in-page links
 - [ ] Build user's matches view with edit key
 
@@ -49,5 +48,8 @@ September 5
 - Added magoun@gmail.com user to database seeder to test userHome view.
     * Now I can log in (password = password) to test that the views are working.
     * This login will persist even on database resets, as long as the seeder runs.
-- [ ] Need to link matches and users, still
+- [x] Need to link matches and users, still
 - [ ] Need to add match totals to match table (seeder?)
+
+September 16
+- [ ] Add functionality to upload a .csv to seed the database?

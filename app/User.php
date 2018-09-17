@@ -27,9 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
-    protected function matches()
+    public function matches()
     {
-        return $this->belongsToMany('App/Match')
+        return $this->belongsToMany('App\Match')
             ->withTimestamps();
     }
 
