@@ -32,10 +32,8 @@ August 2
 
 August 24
 - [x] Create many-to-many relationship between users table and matches table
-- [x] Update 'test' code to test new table structure
-- [ ] Refactor score display logic to use match score from table
-- [ ] Add navigation bar and in-page links
-- [ ] Build user's matches view with edit key
+- [x] Update 'test' code to test   new table structure
+- [x] Build user's matches view with edit key
 
 September 5
 - Added magoun@gmail.com user to database seeder to test userHome view.
@@ -47,4 +45,12 @@ September 5
 September 16
 - [ ] Add functionality to upload a .csv to seed the database?
 - Turns out, for phpunit to run tests, the method names have to start with 'test'
-- 
+
+September 17
+- [ ] Work with James on /matches route (userMatches view)
+  * Generalize to logged in user instead of hard coding user 6
+  * Refactor to controller and/or model.
+- [ ] Set up Edit key to link to score update view
+- [ ] Set up score update view to function (redirect back to /matches!?)
+- [ ] Refactor score display logic to use match score from table
+- [ ] Add navigation bar and in-page links

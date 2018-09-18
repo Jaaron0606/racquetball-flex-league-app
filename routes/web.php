@@ -55,3 +55,30 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+/**
+ * This route is for testing the user match view.
+ */
+Route::get('/matches', function() {
+  $cr8n = \App\User::find(6);
+  $matches = $cr8n->matches;
+  
+  $viewArray = [];
+  
+  foreach ($matches as $match) {
+    $new = ['id' => $match->id];
+    
+    if ($match->player_one_id == 6) {
+      $new['opponentName'] = \App\User::find($match->player_two_id)->name;
+      $new['playerTotal'] = $match->player_one_total;
+      $new['opponentTotal'] = $match->player_two_total;
+    } else {
+      $new['opponentName'] = \App\User::find($match->player_one_id)->name;
+      $new['playerTotal'] = $match->player_two_total;
+      $new['opponentTotal'] = $match->player_one_total;
+    }
+    
+    array_push($viewArray, $new);
+  }
+  
+  return view('userMatches', ['matches' => $viewArray]);
+});
