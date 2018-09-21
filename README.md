@@ -61,3 +61,9 @@ September 17
 - [ ] Set up score update view to function (redirect back to /matches!?)
 - [ ] Refactor score display logic to use match score from table
 - [ ] Add navigation bar and in-page links
+
+September 21
+- [ ] Write MatchController@update to function with updateScores form
+  * https://appdividend.com/2018/02/23/laravel-5-6-crud-tutorial/
+  * View already shows current scores. Needs logic to update and redirect to match view.
+  * 
