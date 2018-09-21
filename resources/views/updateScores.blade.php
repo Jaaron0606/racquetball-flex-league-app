@@ -68,23 +68,24 @@
               line-height: 30px;
             }
         </style>
+        
+        <!--<link rel="stylesheet" href="{{asset('css/app.css')}}">-->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">  
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>  
+
     </head>
     <body>
         <div class="content">
-            
-            <!-- create.blade.php -->
-
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">  
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>  
 
     <div class="container">
       <h2>Update Match Score</h2><br/>
-      <form method="post" action="{{url('passports')}}" enctype="multipart/form-data">
+      <form method="post" action="{{action('MatchController@update', $match)}}">
         @csrf
+        <!-- What is this? -->
+        <!--<input name="_method" type="hidden" value="PATCH">-->
         
         <div class="row">
           <!-- Blank column to center -->
@@ -93,8 +94,8 @@
           <!-- Blank space over game numbers -->
           <div class="col-md-2 col-xs-4"></div>
           
-          <div class="col-md-1 col-xs-4">Player</div>
-          <div class="col-md-1 col-xs-4">Opponent</div>
+          <div class="col-md-1 col-xs-4">{{\App\User::find($match->player_one_id)->name}}</div>
+          <div class="col-md-1 col-xs-4">{{\App\User::find($match->player_two_id)->name}}</div>
         </div>
        
         <div class="row">
@@ -103,10 +104,12 @@
           
           <div class="col-md-2 col-xs-4">Game 1</div>
           <div class="col-md-1 col-xs-4">
-            <input type="number" max="15" min="0" class="form-control" name="game1player1score">
+            <input type="number" max="15" min="0" class="form-control" 
+              name="game1player1score" value="{{$games[0]['player_one_score']}}">
           </div>
           <div class="col-md-1 col-xs-4">
-            <input type="number" max="15" min="0" class="form-control" name="game1player1score">
+            <input type="number" max="15" min="0" class="form-control" 
+              name="game1player2score" value="{{$games[0]['player_two_score']}}">
           </div>
         </div>  
           
@@ -116,10 +119,12 @@
           
           <div class="col-md-2 col-xs-4">Game 2</div>
           <div class="col-md-1 col-xs-4">
-            <input type="number" max="15" min="0" class="form-control" name="game1player1score">
+            <input type="number" max="15" min="0" class="form-control" 
+              name="game2player1score" value="{{$games[1]['player_one_score']}}">
           </div>
           <div class="col-md-1 col-xs-4">
-            <input type="number" max="15" min="0" class="form-control" name="game1player1score">
+            <input type="number" max="15" min="0" class="form-control" 
+              name="game2player2score"  value="{{$games[1]['player_two_score']}}">
           </div>
         </div>
         
@@ -129,10 +134,12 @@
           
           <div class="col-md-2 col-xs-4">Game 3</div>
           <div class="col-md-1 col-xs-4">
-            <input type="number" max="11" min="0" class="form-control" name="game1player1score">
+            <input type="number" max="11" min="0" class="form-control" 
+              name="game3player1score"  value="{{$games[2]['player_one_score']}}">
           </div>
           <div class="col-md-1 col-xs-4">
-            <input type="number" max="11" min="0" class="form-control" name="game1player1score">
+            <input type="number" max="11" min="0" class="form-control" 
+              name="game3player2score" value="{{$games[2]['player_two_score']}}">
           </div>
         </div>
           

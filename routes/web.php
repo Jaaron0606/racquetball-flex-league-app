@@ -32,7 +32,8 @@ Route::get('/', function () {
  * an option to return to the main landing page.
  */
 Route::get('/test', function () {
-  return view('userHome');
+  // return view('userHome');
+  return view('edit');
 });
 
 /**
@@ -43,13 +44,17 @@ Route::get('/test', function () {
  * @params: match to update
  */
 Route::get('/update', function () {
-  return view('updateScores');
+  // Test by passing in known data
+  $match = \App\Match::find(2);
+  $games = $match->games->toArray();
+
+  return view('updateScores', compact('match', 'games'));
 });
 
 /**
  * This route registers the database update routes for the games model.
  */ 
-Route::resource('games', 'GameController');
+Route::resource('matches', 'MatchController');
 
 Auth::routes();
 
@@ -62,7 +67,7 @@ Route::get('/matches', function() {
   $cr8n = \App\User::find(6);
   $matches = $cr8n->matches;
   
-  $viewArray = [];
+  $viewArray = Array();
   
   foreach ($matches as $match) {
     $new = ['id' => $match->id];
