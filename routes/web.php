@@ -11,11 +11,7 @@ Route::get('/test', function () {
 });
 
 Route::get('/update', function () {
-  // Test by passing in known data
-  $match = \App\Match::find(2);
-  $games = $match->games->toArray();
 
-  return view('updateScores', compact('match', 'games'));
 });
 
 /**
@@ -33,6 +29,7 @@ Route::resource('games', 'GameController');
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=> 'auth'], function(){
