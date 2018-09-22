@@ -15,6 +15,13 @@
                     @endif
 
                     You are logged in!
+                    
+                    <?php
+                        $users = \App\User::all();
+                        
+                        // dd($users);
+                    ?>
+                    
                 </div>
             </div>
         </div>

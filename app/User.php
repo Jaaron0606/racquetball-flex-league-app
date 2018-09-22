@@ -26,7 +26,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
     
     public function is_admin()
     {
@@ -43,5 +42,11 @@ class User extends Authenticatable
         //}
     
     
+    
+    public function matches()
+    {
+        return $this->belongsToMany('App\Match')
+            ->withTimestamps();
+    }
 }
 
