@@ -45,6 +45,16 @@ html {
   max-width: 60rem; /* 960px == 60rem*/
 }
 
+.content {
+  text-align: center;
+}
 
+.title {
+  font-size: 84px;
+}
+
+.m-b-md {
+  margin-bottom: 30px;
+}
 
 

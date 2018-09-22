@@ -6,16 +6,11 @@ Route::get('/', function () {
 
 
 Route::get('/test', function () {
-  // return view('userHome');
-  return view('edit');
-});
-
-Route::get('/update', function () {
-
+  return view('userHome');
 });
 
 /**
- * This route registers the database update routes for the games model.
+ * This route registers the database routes for the matches model.
  */ 
 Route::resource('matches', 'MatchController');
 Route::post('/login/custom', [
