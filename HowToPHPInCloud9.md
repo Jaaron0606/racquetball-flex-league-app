@@ -72,7 +72,17 @@ Installing Laravel:
     echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> ~/.bashrc
     source ~/.bashrc
     ```
-
+getting up and running 
+    ```
+    "sudo a2dismod php7.0" 
+    "sudo a2enmod php7.2" 
+    "sudo service apache2 restart"
+    ```
+getting up .env
+    ```
+    Copy .env.example file
+    rename to .env
+    ```
 # TODO list
 - [ ] Explain the scripts line by line?
 - [ ] Add info on using the standard php -S server and php artisan serve on C9 (0.0.0.0:8080)
