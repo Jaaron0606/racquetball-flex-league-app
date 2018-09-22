@@ -82,10 +82,9 @@
 
     <div class="container">
       <h2>Update Match Score</h2><br/>
-      <form method="post" action="{{action('MatchController@update', $match)}}">
+      <form method="POST" action="{{action('MatchController@update', $match)}}">
         @csrf
-        <!-- What is this? -->
-        <!--<input name="_method" type="hidden" value="PATCH">-->
+        <input name="_method" type="hidden" value="PATCH">
         
         <div class="row">
           <!-- Blank column to center -->
@@ -105,11 +104,11 @@
           <div class="col-md-2 col-xs-4">Game 1</div>
           <div class="col-md-1 col-xs-4">
             <input type="number" max="15" min="0" class="form-control" 
-              name="game1player1score" value="{{$games[0]['player_one_score']}}">
+              name="game[0][player_one_score]" value="{{$games[0]['player_one_score']}}">
           </div>
           <div class="col-md-1 col-xs-4">
             <input type="number" max="15" min="0" class="form-control" 
-              name="game1player2score" value="{{$games[0]['player_two_score']}}">
+              name="game[0][player_two_score]" value="{{$games[0]['player_two_score']}}">
           </div>
         </div>  
           
@@ -120,11 +119,11 @@
           <div class="col-md-2 col-xs-4">Game 2</div>
           <div class="col-md-1 col-xs-4">
             <input type="number" max="15" min="0" class="form-control" 
-              name="game2player1score" value="{{$games[1]['player_one_score']}}">
+              name="game[1][player_one_score]" value="{{$games[1]['player_one_score']}}">
           </div>
           <div class="col-md-1 col-xs-4">
             <input type="number" max="15" min="0" class="form-control" 
-              name="game2player2score"  value="{{$games[1]['player_two_score']}}">
+              name="game[1][player_two_score]"  value="{{$games[1]['player_two_score']}}">
           </div>
         </div>
         
@@ -135,11 +134,11 @@
           <div class="col-md-2 col-xs-4">Game 3</div>
           <div class="col-md-1 col-xs-4">
             <input type="number" max="11" min="0" class="form-control" 
-              name="game3player1score"  value="{{$games[2]['player_one_score']}}">
+              name="game[2][player_one_score]"  value="{{$games[2]['player_one_score']}}">
           </div>
           <div class="col-md-1 col-xs-4">
             <input type="number" max="11" min="0" class="form-control" 
-              name="game3player2score" value="{{$games[2]['player_two_score']}}">
+              name="game[2][player_two_score]" value="{{$games[2]['player_two_score']}}">
           </div>
         </div>
           

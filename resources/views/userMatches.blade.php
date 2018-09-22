@@ -46,14 +46,14 @@
         <td>{{$match['playerTotal']}}</td>
         <td>{{$match['opponentTotal']}}</td>
         
-        <td><a href="{{--action('PassportController@edit', $passport['id'])--}}" class="btn btn-warning">Edit</a></td>
-        <td>
-          <form action="{{--action('PassportController@destroy', $passport['id'])--}}" method="post">
-            @csrf
-            <input name="_method" type="hidden" value="DELETE">
-            <button class="btn btn-danger" type="submit">Delete</button>
-          </form>
-        </td>
+        <td><a href="{{action('MatchController@edit', $match['id'])}}" class="btn btn-info">Edit</a></td>
+        <!--<td>-->
+          <!--<form action="{{--action('PassportController@destroy', $passport['id'])--}}" method="post">-->
+          <!--  @csrf-->
+          <!--  <input name="_method" type="hidden" value="DELETE">-->
+          <!--  <button class="btn btn-danger" type="submit">Delete</button>-->
+          <!--</form>-->
+        <!--</td>-->
       </tr>
       @endforeach
     </tbody>
