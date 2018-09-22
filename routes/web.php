@@ -32,23 +32,11 @@ Route::get('/', function () {
  * an option to return to the main landing page.
  */
 Route::get('/test', function () {
-  // return view('userHome');
-  return view('edit');
+  return view('userHome');
 });
 
 /**
- * This route brings the user to a simple form for updating the game scores for
- * a single match. This view should probably by accessible only by the model
- * controller for the games table.
- * 
- * @params: match to update
- */
-Route::get('/update', function () {
-
-});
-
-/**
- * This route registers the database update routes for the games model.
+ * This route registers the database routes for the matches model.
  */ 
 Route::resource('matches', 'MatchController');
 
