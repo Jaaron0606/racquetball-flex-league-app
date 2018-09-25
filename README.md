@@ -68,4 +68,5 @@ September 21
 September 25
 - [ ] Fix updateScores view layout (Bootstrap form?)
 - [ ] Add functionality to upload a .csv to seed the database?
-- [ ] Refactor score display logic to use match score from table
+- [x] Refactor score display logic to use match score from table
+- [ ] Add a count for matches played (logic?)
