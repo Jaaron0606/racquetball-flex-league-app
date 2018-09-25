@@ -88,17 +88,15 @@
         </div>
         
         <?php
-          $games = \App\Game::all();
-          
+          $matches = \App\Match::all();
+
           $player_scores = [];
           
-          foreach ($games as $game) {
-            $p1 = $game->match->player_one;
-            $p1_score = $game->player_one_score;
-            $p2 = $game->match->player_two;
-            $p2_score = $game->player_two_score;
-            
-            $p2_score > $p1_score ? $p2_score += 5 : $p1_score += 5;
+          foreach ($matches as $match) {
+            $p1 = $match->player_one_id;
+            $p1_score = $match->player_one_total;
+            $p2 = $match->player_two_id;
+            $p2_score = $match->player_two_total;
             
             if (array_key_exists($p1, $player_scores)) {
               $player_scores[$p1] += $p1_score;
@@ -126,10 +124,10 @@
                 <th>Games</th>
               </tr>
               
-              @foreach (array_keys($player_scores) as $name)
+              @foreach (array_keys($player_scores) as $id)
                 <tr class="card-text">
-                  <td>{{ $name }}</td>
-                  <td>{{ $player_scores[$name] }}</td>
+                  <td>{{ \App\User::find($id)->name }}</td>
+                  <td>{{ $player_scores[$id] }}</td>
                   <td>1 / 1</td>
                 </tr>
               @endforeach
