@@ -35,7 +35,7 @@ class MatchController extends Controller
       array_push($viewArray, $new);
     }
     
-    return view('userMatches', ['matches' => $viewArray]);
+    return view('matches', ['matches' => $viewArray]);
   }
 
   /**
