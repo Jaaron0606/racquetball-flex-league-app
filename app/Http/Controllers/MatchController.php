@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Match;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MatchController extends Controller
 {
@@ -14,15 +15,15 @@ class MatchController extends Controller
    */
   public function index()
   {
-    $cr8n = \App\User::find(6);
-    $matches = $cr8n->matches;
+    $user = Auth::user();
+    $matches = $user->matches;
     
     $viewArray = Array();
     
     foreach ($matches as $match) {
     $new = ['id' => $match->id];
     
-    if ($match->player_one_id == 6) {
+    if ($match->player_one_id == $user->id) {
       $new['opponentName'] = \App\User::find($match->player_two_id)->name;
       $new['playerTotal'] = $match->player_one_total;
       $new['opponentTotal'] = $match->player_two_total;

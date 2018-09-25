@@ -43,19 +43,22 @@ September 5
 - [x] Need to add match totals to match table (seeder?)
 
 September 16
-- [ ] Add functionality to upload a .csv to seed the database?
 - Turns out, for phpunit to run tests, the method names have to start with 'test'
 
 September 17
-- [ ] Work with James on /matches route (userMatches view)
+- [x] Work with James on /matches route (userMatches view)
   * Generalize to logged in user instead of hard coding user 6
   * Refactor to controller and/or model.
 - [x] Set up Edit key to link to score update view
 - [x] Set up score update view to function (redirect back to /matches!?)
-- [ ] Refactor score display logic to use match score from table
-- [ ] Add navigation bar and in-page links
+- [x] Add navigation bar and in-page links
 
 September 21
 - [x] Write MatchController@update to function with updateScores form
   * https://appdividend.com/2018/02/23/laravel-5-6-crud-tutorial/
   * View already shows current scores. Needs logic to update and redirect to match view.
+
+September 25
+- [ ] Fix updateScores view layout (Bootstrap form?)
+- [ ] Add functionality to upload a .csv to seed the database?
+- [ ] Refactor score display logic to use match score from table
