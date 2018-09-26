@@ -5,7 +5,7 @@
   <h2>Update Match Score</h2>
   <br/>
   
-  <form method="POST" action="{{action('MatchController@update', $match)}}">
+  <form method="POST" action="{{ action('MatchController@update', $match) }}">
     @csrf
     <input name="_method" type="hidden" value="PATCH">
     
@@ -24,12 +24,12 @@
       <div class="col">
         <input type="number" max="15" min="0" class="form-control" 
           name="game[0][player_one_score]" 
-          value="{{$games[0]['player_one_score']}}" required />
+          value="{{ $games[0]['player_one_score'] }}" required />
       </div>
       <div class="col">
         <input type="number" max="15" min="0" class="form-control" 
           name="game[0][player_two_score]" 
-          value="{{$games[0]['player_two_score']}}" required />
+          value="{{ $games[0]['player_two_score'] }}" required />
       </div>
     </div>
     
@@ -38,12 +38,12 @@
       <div class="col">
         <input type="number" max="15" min="0" class="form-control" 
           name="game[1][player_one_score]" 
-          value="{{$games[1]['player_one_score']}}" required />
+          value="{{ $games[1]['player_one_score'] }}" required />
       </div>
       <div class="col">
         <input type="number" max="15" min="0" class="form-control" 
           name="game[1][player_two_score]" 
-          value="{{$games[1]['player_two_score']}}" required />
+          value="{{ $games[1]['player_two_score'] }}" required />
       </div>
     </div>
     
@@ -52,12 +52,12 @@
       <div class="col">
         <input type="number" max="11" min="0" class="form-control" 
           name="game[2][player_one_score]" 
-          value="{{$games[2]['player_one_score']}}" required />
+          value="{{ $games[2]['player_one_score'] }}" required />
       </div>
       <div class="col">
         <input type="number" max="11" min="0" class="form-control" 
           name="game[2][player_two_score]" 
-          value="{{$games[2]['player_two_score']}}" required />
+          value="{{ $games[2]['player_two_score'] }}" required />
       </div>
     </div>
     
@@ -70,6 +70,7 @@
     <div class="form-group form-row">
       <div class="mx-auto">
         <button type="submit" class="btn btn-primary">Submit scores</button>
+        <a href="{{ route('matches.index') }}" class="btn btn-secondary">Back</a>
       </div>
     </div>
   </form>
