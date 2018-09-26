@@ -23,11 +23,13 @@
       <label class="col-2 col-form-label text-right">Game 1</label>
       <div class="col">
         <input type="number" max="15" min="0" class="form-control" 
-          name="game[0][player_one_score]" value="{{$games[0]['player_one_score']}}" />
+          name="game[0][player_one_score]" 
+          value="{{$games[0]['player_one_score']}}" required />
       </div>
       <div class="col">
         <input type="number" max="15" min="0" class="form-control" 
-          name="game[0][player_two_score]" value="{{$games[0]['player_two_score']}}" />
+          name="game[0][player_two_score]" 
+          value="{{$games[0]['player_two_score']}}" required />
       </div>
     </div>
     
@@ -35,11 +37,13 @@
       <label class="col-2 col-form-label text-right">Game 2</label>
       <div class="col">
         <input type="number" max="15" min="0" class="form-control" 
-          name="game[1][player_one_score]" value="{{$games[1]['player_one_score']}}" />
+          name="game[1][player_one_score]" 
+          value="{{$games[1]['player_one_score']}}" required />
       </div>
       <div class="col">
         <input type="number" max="15" min="0" class="form-control" 
-          name="game[1][player_two_score]" value="{{$games[1]['player_two_score']}}" />
+          name="game[1][player_two_score]" 
+          value="{{$games[1]['player_two_score']}}" required />
       </div>
     </div>
     
@@ -47,11 +51,13 @@
       <label class="col-2 col-form-label text-right">Game 3</label>
       <div class="col">
         <input type="number" max="11" min="0" class="form-control" 
-          name="game[2][player_one_score]" value="{{$games[2]['player_one_score']}}" />
+          name="game[2][player_one_score]" 
+          value="{{$games[2]['player_one_score']}}" required />
       </div>
       <div class="col">
         <input type="number" max="11" min="0" class="form-control" 
-          name="game[2][player_two_score]" value="{{$games[2]['player_two_score']}}" />
+          name="game[2][player_two_score]" 
+          value="{{$games[2]['player_two_score']}}" required />
       </div>
     </div>
     
