@@ -66,7 +66,7 @@ September 21
   * View already shows current scores. Needs logic to update and redirect to match view.
 
 September 25
-- [ ] Fix updateScores view layout (Bootstrap form?)
+- [x] Fix updateScores view layout (Bootstrap form?)
 - [ ] Add functionality to upload a .csv to seed the database?
 - [x] Refactor score display logic to use match score from table
 - [ ] Add a count for matches played (logic?)
