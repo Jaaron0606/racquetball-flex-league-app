@@ -70,9 +70,8 @@ September 25
 - [ ] Add functionality to upload a .csv to seed the database?
 - [x] Refactor score display logic to use match score from table
 - [ ] Add a count for matches played (logic?)
-- [ ] Fix scoreboard css to not break general card css (Laravel built-in)
+- [x] Fix scoreboard css to not break general card css (Laravel built-in)
   * Cascade with id?
-- [ ] 
 
 What's next?
   * Sorting by division
@@ -80,6 +79,12 @@ What's next?
   * home page content
   * admin match edit view with search
   * match editing restrictions
+  * protect routes with middleware
   * testing with last league data
     * input last league data...
     * batch upload feature?
+
+Ask James:
+ * What is the 'players' route for?
+ * Do we need the HomeController and associated route anymore?
+ * 
