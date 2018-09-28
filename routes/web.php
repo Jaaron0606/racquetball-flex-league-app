@@ -4,20 +4,15 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-Route::resource('matches', 'MatchController');
 Route::resource('/users', 'UsersController');
 Auth::routes();
-
-Route::get('/update', function () {
-  return view('updateScores');
-});
 
 Route::post('/login/custom', [
   'uses' => 'LoginController@login',
   'as' => 'login.custom'
   ]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=> 'auth'], function(){
   
@@ -28,9 +23,11 @@ Route::group(['middleware'=> 'auth'], function(){
   Route::get('/dashboard', function(){
     return view('adminHome');
   })->name('dashboard');
-
+  
+  Route::resource('matches', 'MatchController');
 });
 
+// What is this?
 Route::get('/players', function(){
     return view('adminplayers');
 });
