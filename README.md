@@ -67,7 +67,6 @@ September 21
 
 September 25
 - [x] Fix updateScores view layout (Bootstrap form?)
-- [ ] Add functionality to upload a .csv to seed the database?
 - [x] Refactor score display logic to use match score from table
 - [ ] Add a count for matches played (logic?)
 - [x] Fix scoreboard css to not break general card css (Laravel built-in)

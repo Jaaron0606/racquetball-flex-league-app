@@ -3,7 +3,7 @@
 @section('content')
   <div class="content">
     <div class="title m-b-md">
-      Current League Performance
+      League Title
     </div>
   
     <!--
@@ -16,34 +16,7 @@
     
     <div class="container" id="scoreboard">
       <div class="card-deck">
-        <div class="card border-dark mb-3">
-          <div class="card-header border-dark">Hard Coded Division</div>
-          <div class="card-body text-dark">
-            <table>
-              <tr class="card-title">
-                <th>Player</th>
-                <th>Score</th>
-                <th>Games</th>
-              </tr>
-              <tr class="card-text">
-                <td>Kooper</td>
-                <td>162</td>
-                <td>3 / 7</td>
-              </tr>
-              <tr class="card-text">
-                <td>John</td>
-                <td>121</td>
-                <td>3 / 7</td>
-              </tr>
-              <tr class="card-text">
-                <td>Freddy</td>
-                <td>90</td>
-                <td>2 / 7</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        
+      
         <?php
           // $matches = \App\Match::all();
           $leagueMatches = \App\Match::where('league_name', 'Test League')->get();
