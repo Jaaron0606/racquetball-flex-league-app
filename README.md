@@ -73,17 +73,23 @@ September 25
   * Cascade with id?
 
 What's next?
-  * Sorting by division
-  * Matches by league (current league default)
   * home page content
   * admin match edit view with search
   * match editing restrictions
+    * Can only edit matches that haven't been submitted (empty scores)
+      * Change 'Edit' key to 'View', remove 'Submit Scores' and make form disabled.
+    * Can only edit matches that the logged in user is in
   * protect routes with middleware
-  * testing with last league data
-    * input last league data...
-    * batch upload feature?
+
+- [ ] Deploy and set up league to start
+
 
 Ask James:
- * What is the 'players' route for?
- * Do we need the HomeController and associated route anymore?
- * 
+  * What is the 'players' route for?
+  * Do we need the HomeController and associated route anymore?
+  * 
+ 
+Future:
+  * Matches by league (current league default)
+  * Input last league data...
+  * batch upload feature?

@@ -9,30 +9,26 @@
   <!--  </div><br />-->
   <!-- @endif-->
   
-  <table class="table table-striped">
+  <table class="table table-striped table-bordered">
     <thead>
       <tr>
-        <th>ID</th>
+        <th class="text-center">ID</th>
         <th>Opponent</th>
-        <!--<th>Date Updated</th>-->
-        <th>Match Total</th>
-        <th>Points Allowed</th>
-        <th colspan="2">Action</th>
+        <th class="text-center">Your Total</th>
+        <th class="text-center">Their Total</th>
+        <th class="text-center">Action</th>
       </tr>
     </thead>
     <tbody>
       
       @foreach($matches as $match)
-      <!--@php-->
-      <!--  $date=date('Y-m-d', $passport['date']);-->
-      <!--  @endphp-->
       <tr>
-        <td>{{$match['id']}}</td>
+        <td class="text-center">{{$match['id']}}</td>
         <td>{{$match['opponentName']}}</td>
-        <td>{{$match['playerTotal']}}</td>
-        <td>{{$match['opponentTotal']}}</td>
+        <td class="text-center">{{$match['playerTotal']}}</td>
+        <td class="text-center">{{$match['opponentTotal']}}</td>
         
-        <td><a href="{{action('MatchController@edit', $match['id'])}}" class="btn btn-info">Edit</a></td>
+        <td align="center"><a href="{{action('MatchController@edit', $match['id'])}}" class="btn btn-info">Edit</a></td>
         <!--<td>-->
           <!--<form action="{{--action('PassportController@destroy', $passport['id'])--}}" method="post">-->
           <!--  @csrf-->
