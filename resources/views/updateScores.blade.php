@@ -5,7 +5,7 @@
   <h2>Update Match Score</h2>
   <br/>
   
-  <form method="POST" action="{{ action('MatchController@update', $match) }}">
+  <form method="POST" action="{{ action('MatchController@update', $match) }}" id="updateForm">
     @csrf
     <input name="_method" type="hidden" value="PATCH">
     
