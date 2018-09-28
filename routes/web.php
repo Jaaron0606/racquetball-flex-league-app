@@ -16,9 +16,9 @@ Route::post('/login/custom', [
 
 Route::group(['middleware'=> 'auth'], function(){
   
-  Route::get('/home', function(){
-    return view('userHome');
-  })->name('home');
+  Route::get('/scoreboard', function(){
+    return view('scoreboard');
+  })->name('scoreboard');
   
   Route::get('/dashboard', function(){
     return view('adminHome');
