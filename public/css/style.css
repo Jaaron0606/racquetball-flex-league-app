@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: row wrap-reverse;
+  flex-flow: row wrap;
 }
 
 #scoreboard .card {

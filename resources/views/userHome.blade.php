@@ -16,51 +16,8 @@
     
     <div class="container" id="scoreboard">
       <div class="card-deck">
-        <div class="card border-primary mb-3">
-          <div class="card-header">Header</div>
-          <div class="card-body text-primary">
-            <h5 class="card-title">Primary card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-        <div class="card border-secondary mb-3">
-          <div class="card-header">Header</div>
-          <div class="card-body text-secondary">
-            <h5 class="card-title">Secondary card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-        <div class="card border-success mb-3">
-          <div class="card-header">Header</div>
-          <div class="card-body text-success">
-            <h5 class="card-title">Success card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-        <div class="card border-danger mb-3">
-          <div class="card-header">Header</div>
-          <div class="card-body text-danger">
-            <h5 class="card-title">Danger card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-        <div class="card border-warning mb-3">
-          <div class="card-header">Header</div>
-          <div class="card-body text-warning">
-            <h5 class="card-title">Warning card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-        <div class="card border-info mb-3">
-          <div class="card-header">Header</div>
-          <div class="card-body text-info">
-            <h5 class="card-title">Info card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-  
         <div class="card border-dark mb-3">
-          <div class="card-header border-dark">Open/A Singles</div>
+          <div class="card-header border-dark">Hard Coded Division</div>
           <div class="card-body text-dark">
             <table>
               <tr class="card-title">
@@ -88,61 +45,71 @@
         </div>
         
         <?php
-          $matches = \App\Match::all();
-
-          $player_scores = [];
+          // $matches = \App\Match::all();
+          $leagueMatches = \App\Match::where('league_name', 'Test League')->get();
+          $leagueDivs = $leagueMatches->unique('division_name');
+          $divisions = Array();
           
-          foreach ($matches as $match) {
-            $p1 = $match->player_one_id;
-            $p1_score = $match->player_one_total;
-            $p2 = $match->player_two_id;
-            $p2_score = $match->player_two_total;
-            
-            if (array_key_exists($p1, $player_scores)) {
-              $player_scores[$p1] += $p1_score;
-            } else {
-              $player_scores[$p1] = $p1_score;
-            }
-            
-            if (array_key_exists($p2, $player_scores)) {
-              $player_scores[$p2] += $p2_score;
-            } else {
-              $player_scores[$p2] = $p2_score;
-            }
+          foreach ($leagueDivs as $leagueDiv) {
+            array_push($divisions, $leagueDiv->division_name);
           }
           
-          arsort($player_scores);
+          $scoreboard = Array();
+          
+          foreach ($divisions as $division) {
+            $matches = $leagueMatches->where('division_name', $division)->all();
+            $player_scores = Array();
+            
+            foreach ($matches as $match) {
+              $p1 = $match->player_one_id;
+              $p1_score = $match->player_one_total;
+              $p2 = $match->player_two_id;
+              $p2_score = $match->player_two_total;
+              
+              if (array_key_exists($p1, $player_scores)) {
+                $player_scores[$p1] += $p1_score;
+              } else {
+                $player_scores[$p1] = $p1_score;
+              }
+              
+              if (array_key_exists($p2, $player_scores)) {
+                $player_scores[$p2] += $p2_score;
+              } else {
+                $player_scores[$p2] = $p2_score;
+              }
+            }
+            
+            arsort($player_scores);
+            $scoreboard[$division] = $player_scores;
+          }
+          
+          // dd($scoreboard);
         ?>
         
-        <div class="card border-dark mb-3">
-          <div class="card-header border-dark">Open/A Singles</div>
-          <div class="card-body text-dark">
-            <table>
-              <tr class="card-title">
-                <th>Player</th>
-                <th>Score</th>
-                <th>Games</th>
-              </tr>
-              
-              @foreach (array_keys($player_scores) as $id)
-                <tr class="card-text">
-                  <td>{{ \App\User::find($id)->name }}</td>
-                  <td>{{ $player_scores[$id] }}</td>
-                  <td>1 / 1</td>
+        @foreach (array_keys($scoreboard) as $division)
+          <div class="card border-dark mb-3">
+            <div class="card-header border-dark">{{ $division }}</div>
+            <div class="card-body text-dark">
+              <table>
+                <tr class="card-title">
+                  <th>Player</th>
+                  <th>Score</th>
+                  <th>Games</th>
                 </tr>
-              @endforeach
-              
-            </table>
+                
+                @foreach (array_keys($scoreboard[$division]) as $id)
+                  <tr class="card-text">
+                    <td>{{ \App\User::find($id)->name }}</td>
+                    <td>{{ $scoreboard[$division][$id] }}</td>
+                    <td>GAMES PLAYED?</td>
+                  </tr>
+                @endforeach
+                
+              </table>
+            </div>
           </div>
-        </div>
+        @endforeach
         
-        <div class="card border-light mb-3">
-          <div class="card-header border-light">Header</div>
-          <div class="card-body text-dark">
-            <h5 class="card-title">Dark card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
       </div>
     </div>
 <<<<<<< HEAD
