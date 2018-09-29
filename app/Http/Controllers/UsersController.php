@@ -45,7 +45,7 @@ class UsersController extends Controller
         $newplayer->name = $request->input('name');
         $newplayer->email = $request->input('email');
         $newplayer->admin = $request->input('admin');
-        $newplayer->password = $request->input('password');
+        $newplayer->password = bcrypt($request->input('password'));
         $newplayer->save();
         return redirect('/users')->with('success', 'User Created');
     }
@@ -86,14 +86,13 @@ class UsersController extends Controller
         $this->validate($request, [
            'name' => 'required',
            'email' => 'required',
-           'admin' => 'required',
-           'password' => 'required'
+           'admin' => 'required'
     ]);
         $upplayer = User::find($id);
         $upplayer->name = $request->input('name');
         $upplayer->email = $request->input('email');
         $upplayer->admin = $request->input('admin');
-        $upplayer->password = $request->input('password');
+        //$upplayer->password = bcrypt($request->input('password'));
         $upplayer->save();
         return redirect('/users')->with('success', 'User Updated');
     }

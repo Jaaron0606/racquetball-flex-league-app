@@ -5,6 +5,7 @@ use App\css.scss
 ?>
 
 @extends('layouts.app')
+@include('inc.messages')
 @section('content')
   <head>
     <title>Match Scores Update Form</title>
@@ -34,7 +35,7 @@ use App\css.scss
                 <th>Email Address</th>
                 <th>ID</th>
                 <th>Update User info</th> 
-                <th>Password</th>
+              
                 </tr>
     <?php foreach($players as $key=>$value): ?>
     <tr>
@@ -51,8 +52,8 @@ use App\css.scss
         ?></button></td>
         <td><?php echo $value['email']; ?></td>
         <td><?php echo $value['id']; ?></td>
-        <td><a href = "/users/<?php echo $value['id']; ?>/edit">edit user</a></td>
-        <td><?php echo $value['password']; ?></td>
+        <td><a href = "/users/<?php echo $value['id']; ?>/edit">Update user</a></td>
+        
     </tr>
     <?php endforeach; ?>
 </table>
