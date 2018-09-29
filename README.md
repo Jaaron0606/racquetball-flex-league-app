@@ -82,12 +82,6 @@ What's next?
   * protect routes with middleware
 
 - [ ] Deploy and set up league to start
-
-
-Ask James:
-  * What is the 'players' route for?
-  * Do we need the HomeController and associated route anymore?
-  * 
  
 Future:
   * Matches by league (current league default)
