@@ -59,22 +59,22 @@
           // dd($scoreboard);
         ?>
         
-        @foreach (array_keys($scoreboard) as $division)
+        @foreach ($scoreboard as $division_name => $division_totals)
           <div class="card border-dark mb-3">
-            <div class="card-header border-dark">{{ $division }}</div>
+            <div class="card-header border-dark">{{ $division_name }}</div>
             <div class="card-body text-dark">
-              <table>
+              <table class="table table-sm">
                 <tr class="card-title">
+                  <th>#</th>
                   <th>Player</th>
-                  <th>Score</th>
-                  <th>Games</th>
+                  <th>Points</th>
                 </tr>
                 
-                @foreach (array_keys($scoreboard[$division]) as $id)
+                @foreach ($division_totals as $player_id => $total)
                   <tr class="card-text">
-                    <td>{{ \App\User::find($id)->name }}</td>
-                    <td>{{ $scoreboard[$division][$id] }}</td>
-                    <td>GAMES PLAYED?</td>
+                    <td>{{ array_search($player_id, array_keys($division_totals)) + 1 }}</td>
+                    <td>{{ \App\User::find($player_id)->name }}</td>
+                    <td>{{ $total }}</td>
                   </tr>
                 @endforeach
                 
