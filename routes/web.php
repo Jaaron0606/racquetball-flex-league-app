@@ -4,11 +4,6 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-
-Route::get('/test', function () {
-  return view('userHome');
-});
-
 Route::post('/login/custom', [
   'uses' => 'LoginController@login',
   'as' => 'login.custom'
