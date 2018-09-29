@@ -71,7 +71,7 @@ September 25
 - [x] Fix scoreboard css to not break general card css (Laravel built-in)
 
 What's next?
-- [ ] home page content
+- [x] home page content
 - [ ] admin match edit view
 - [x] Can only edit matches that haven't been submitted (empty scores)
 - [x] Change 'Edit' key to 'View', remove 'Submit Scores' and make form disabled.

@@ -75,7 +75,7 @@ use App\User;
                                     <a class="dropdown-item" href="{{ route('dashboard') }}">
                                         Administration Dashboard
                                     @else
-                                    <a class="dropdown-item" href="{{ route('home') }}">
+                                    <a class="dropdown-item" href="{{ route('scoreboard') }}">
                                         Dashboard
                                     </a>
                                     @endif
