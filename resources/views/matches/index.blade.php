@@ -19,8 +19,8 @@
         <th class="text-center">Action</th>
       </tr>
     </thead>
+    
     <tbody>
-      
       @foreach($matches as $match)
       <tr>
         <td class="text-center">{{$match['id']}}</td>
@@ -29,13 +29,6 @@
         <td class="text-center">{{$match['opponentTotal']}}</td>
         
         <td align="center"><a href="{{action('MatchController@edit', $match['id'])}}" class="btn btn-info">Edit</a></td>
-        <!--<td>-->
-          <!--<form action="{{--action('PassportController@destroy', $passport['id'])--}}" method="post">-->
-          <!--  @csrf-->
-          <!--  <input name="_method" type="hidden" value="DELETE">-->
-          <!--  <button class="btn btn-danger" type="submit">Delete</button>-->
-          <!--</form>-->
-        <!--</td>-->
       </tr>
       @endforeach
     </tbody>

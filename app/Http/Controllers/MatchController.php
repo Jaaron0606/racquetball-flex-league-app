@@ -36,7 +36,7 @@ class MatchController extends Controller
       array_push($viewArray, $new);
     }
     
-    return view('matches', ['matches' => $viewArray]);
+    return view('matches.index', ['matches' => $viewArray]);
   }
 
   /**
@@ -68,7 +68,8 @@ class MatchController extends Controller
    */
   public function show(Match $match)
   {
-    //
+    $games = $match->games->toArray();
+    return view('matches.show', compact('match', 'games'));
   }
 
   /**
@@ -80,7 +81,7 @@ class MatchController extends Controller
   public function edit(Match $match)
   {
     $games = $match->games->toArray();
-    return view('updateScores', compact('match', 'games'));
+    return view('matches.updateScores', compact('match', 'games'));
   }
 
   /**
@@ -118,7 +119,7 @@ class MatchController extends Controller
     $match->player_two_total = $p2_total;
     $match->save();
     
-    return redirect('matches');
+    return redirect('matches.index');
   }
 
   /**
