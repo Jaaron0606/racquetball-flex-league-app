@@ -31,7 +31,3 @@ Route::group(['middleware'=> 'auth'], function(){
 Route::get('/players', function(){
     return view('adminplayers');
 });
-
-Route::get('/test', function () {
-  return view('userHome');
-});
