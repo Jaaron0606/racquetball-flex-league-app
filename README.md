@@ -50,20 +50,40 @@ September 5
 - [x] Need to add match totals to match table (seeder?)
 
 September 16
-- [ ] Add functionality to upload a .csv to seed the database?
 - Turns out, for phpunit to run tests, the method names have to start with 'test'
 
 September 17
-- [ ] Work with James on /matches route (userMatches view)
+- [x] Work with James on /matches route (userMatches view)
   * Generalize to logged in user instead of hard coding user 6
   * Refactor to controller and/or model.
-- [ ] Set up Edit key to link to score update view
-- [ ] Set up score update view to function (redirect back to /matches!?)
-- [ ] Refactor score display logic to use match score from table
-- [ ] Add navigation bar and in-page links
+- [x] Set up Edit key to link to score update view
+- [x] Set up score update view to function (redirect back to /matches!?)
+- [x] Add navigation bar and in-page links
 
 September 21
-- [ ] Write MatchController@update to function with updateScores form
+- [x] Write MatchController@update to function with updateScores form
   * https://appdividend.com/2018/02/23/laravel-5-6-crud-tutorial/
   * View already shows current scores. Needs logic to update and redirect to match view.
-  * 
+
+September 25
+- [x] Fix updateScores view layout (Bootstrap form?)
+- [x] Refactor score display logic to use match score from table
+- [ ] Add a count for matches played (logic?)
+- [x] Fix scoreboard css to not break general card css (Laravel built-in)
+  * Cascade with id?
+
+What's next?
+  * home page content
+  * admin match edit view with search
+  * match editing restrictions
+    * Can only edit matches that haven't been submitted (empty scores)
+      * Change 'Edit' key to 'View', remove 'Submit Scores' and make form disabled.
+    * Can only edit matches that the logged in user is in
+  * protect routes with middleware
+
+- [ ] Deploy and set up league to start
+ 
+Future:
+  * Matches by league (current league default)
+  * Input last league data...
+  * batch upload feature?

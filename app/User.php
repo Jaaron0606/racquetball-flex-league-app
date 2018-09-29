@@ -26,6 +26,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
     
     public function is_admin()
     {
@@ -34,12 +35,12 @@ class User extends Authenticatable
         return false;
     }
 
-//    public function yes_or_no()
-  //      {
-    //    if (1) {
-      //      $updating = $dbConnect->query(UPDATE User SET admin=1 WHERE name='James admin'); }
-        //else (UPDATE user SET admin=1 WHERE name='James admin';)
-        //}
+    // public function yes_or_no()
+    //     {
+    //     if (1) {
+    //         $updating = $dbConnect->query(UPDATE User SET admin=1 WHERE name='James admin'); }
+    //     else (UPDATE user SET admin=1 WHERE name='James admin';)
+    //     }
     
     
     
