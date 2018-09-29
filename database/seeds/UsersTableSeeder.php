@@ -70,6 +70,11 @@ class UsersTableSeeder extends Seeder
                             $userTotal += $p1Score;
                             $opponentTotal += $p2Score;
                         }
+                    } else {
+                        factory(App\Game::class, 3)
+                            ->create(['match_id' => $id,
+                                      'player_one_score' => 0,
+                                      'player_two_score' => 0]);
                     }
                     
                     // Add match total to matches table
