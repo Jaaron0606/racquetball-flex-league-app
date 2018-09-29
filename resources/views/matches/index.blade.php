@@ -28,7 +28,13 @@
         <td class="text-center">{{$match['playerTotal']}}</td>
         <td class="text-center">{{$match['opponentTotal']}}</td>
         
-        <td align="center"><a href="{{action('MatchController@edit', $match['id'])}}" class="btn btn-info">Edit</a></td>
+        <td align="center">
+          @if($match['playerTotal'] + $match['opponentTotal'] == 0)
+            <a href="{{action('MatchController@edit', $match['id'])}}" class="btn btn-outline-success">Edit</a>
+          @else
+            <a href="{{action('MatchController@show', $match['id'])}}" class="btn btn-outline-info">View</a>
+          @endif
+          </td>
       </tr>
       @endforeach
     </tbody>

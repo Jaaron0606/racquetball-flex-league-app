@@ -119,7 +119,7 @@ class MatchController extends Controller
     $match->player_two_total = $p2_total;
     $match->save();
     
-    return redirect('matches.index');
+    return redirect('matches');
   }
 
   /**

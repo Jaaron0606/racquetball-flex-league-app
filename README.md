@@ -68,18 +68,15 @@ September 21
 September 25
 - [x] Fix updateScores view layout (Bootstrap form?)
 - [x] Refactor score display logic to use match score from table
-- [ ] Add a count for matches played (logic?)
 - [x] Fix scoreboard css to not break general card css (Laravel built-in)
-  * Cascade with id?
 
 What's next?
-  * home page content
-  * admin match edit view with search
-  * match editing restrictions
-    * Can only edit matches that haven't been submitted (empty scores)
-      * Change 'Edit' key to 'View', remove 'Submit Scores' and make form disabled.
-    * Can only edit matches that the logged in user is in
-  * protect routes with middleware
+- [ ] home page content
+- [ ] admin match edit view
+- [x] Can only edit matches that haven't been submitted (empty scores)
+- [x] Change 'Edit' key to 'View', remove 'Submit Scores' and make form disabled.
+- [ ] Can only edit matches that the logged in user is in
+- [ ] protect routes with middleware
 
 - [ ] Deploy and set up league to start
  
@@ -87,3 +84,4 @@ Future:
   * Matches by league (current league default)
   * Input last league data...
   * batch upload feature?
+- [ ] Add a count for matches played (logic?)

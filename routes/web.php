@@ -9,7 +9,6 @@ Route::post('/login/custom', [
   'as' => 'login.custom'
   ]);
 
-
 Route::group(['middleware'=> 'auth'], function(){
   
   Route::get('/scoreboard', function(){
