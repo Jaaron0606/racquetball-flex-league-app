@@ -11,7 +11,7 @@ Route::post('/login/custom', [
   'as' => 'login.custom'
   ]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'loginController@index')->name('home');
 
 Route::group(['middleware'=> 'auth'], function(){
   
