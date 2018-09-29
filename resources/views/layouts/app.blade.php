@@ -1,3 +1,7 @@
+<?php
+use App\User;
+
+?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -49,19 +53,33 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <li class="nav-item">
+                                <a class="nav-link" href="https://www.sportsclubsc.com/">Sportsclub</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Player Login') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Player Register') }}</a>
                             </li>
                         @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.sportsclubsc.com/">Sportsclub</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    @if(Auth::user()->admin == 1)
+                                    <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                        Administration Dashboard
+                                    @else
+                                    <a class="dropdown-item" href="{{ route('home') }}">
+                                        Dashboard
+                                    </a>
+                                    @endif
+                                    
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
