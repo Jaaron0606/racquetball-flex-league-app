@@ -86,7 +86,7 @@
             <div class="card-header">Questions or Comments</div>
             <div class="card-body text-success">
               <h5 class="card-title">Please reach out to Lynette Froehlich</h5>
-              <p class="card-text">Send her emails at Lynette.k.froehlich@gmail.com</p>
+              <p class="card-text"></p> Send Lynette an email</p>
             <a href =""><i class="fas fa-envelope"></i></a>
             </div>
           </div>
