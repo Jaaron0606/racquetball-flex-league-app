@@ -6,9 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Racquetball</title>
-    
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,600" rel="stylesheet" type="text/css">
         <!-- style -->
         <!--<link href="{{ URL::asset('css/raquetball.css') }}" rel="stylesheet" type="text/css" >-->
         <!-- Bootstrap Stuff -->
@@ -28,13 +27,9 @@
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
-                font-weight: 100;
+                font-weight: 300;
                 margin: 0;
             }
-<<<<<<< HEAD
-=======
-
->>>>>>> Cleaning up CSS and links
             .flex-center {
                 align-items: center;
                 display: flex;
@@ -50,11 +45,7 @@
             }
             .content {
                 text-align: center;
-<<<<<<< HEAD
-                margin-bottom:3rem;
-=======
                 margin-top: 3rem;
->>>>>>> Cleaning up CSS and links
             }
             .title {
                 font-size: 4rem;
