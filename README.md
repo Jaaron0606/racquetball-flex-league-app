@@ -72,16 +72,18 @@ September 25
 
 What's next?
 - [x] home page content
-- [ ] admin match edit view
 - [x] Can only edit matches that haven't been submitted (empty scores)
 - [x] Change 'Edit' key to 'View', remove 'Submit Scores' and make form disabled.
-- [ ] Can only edit matches that the logged in user is in
-- [ ] protect routes with middleware
+- [x] Can only edit matches that the logged in user is in
+- [x] protect routes with middleware
 
 - [ ] Deploy and set up league to start
  
 Future:
+- [ ] admin match edit view
   * Matches by league (current league default)
   * Input last league data...
   * batch upload feature?
+  * Doubles leagues
 - [ ] Add a count for matches played (logic?)
+  * Add a visual +5 reminder?
