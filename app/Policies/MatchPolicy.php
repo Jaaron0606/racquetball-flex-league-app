@@ -9,7 +9,14 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class MatchPolicy
 {
     use HandlesAuthorization;
-
+    
+    public function before($user, $ability)
+    {
+        if ($user->is_admin()) {
+            return true;
+        }
+    }
+    
     /**
      * Determine whether the user can view the match.
      *
