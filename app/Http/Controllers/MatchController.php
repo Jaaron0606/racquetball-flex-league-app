@@ -80,6 +80,8 @@ class MatchController extends Controller
    */
   public function edit(Match $match)
   {
+    $this->authorize('update', $match);
+    
     $games = $match->games->toArray();
     return view('matches.updateScores', compact('match', 'games'));
   }
@@ -93,6 +95,8 @@ class MatchController extends Controller
    */
   public function update(Request $request, Match $match)
   {
+    $this->authorize('update', $match);
+    
     $games = $match->games;
     
     // Calculate match total
