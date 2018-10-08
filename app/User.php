@@ -33,6 +33,20 @@ class User extends Authenticatable
             ->withTimestamps();
     }
 
+    public function generatePassword($length) {
+        $characters = 'abcdefghijklmnopqrstuvwxyz' . 
+                      'ABCDEFGHIJKLMNOPQRSTUVWXYZ' .
+                      '0123456789';
+                      
+        $password = '';
+        $limit = strlen($characters) - 1;
+        
+        for ($i = 0; $i < $length; $i++) {
+          $password .= $characters[mt_rand(0, $limit)];
+        }
+        
+        return $password;
+    }
     
     public function is_admin()
     {
