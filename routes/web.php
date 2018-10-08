@@ -11,7 +11,7 @@ Route::post('/login/custom', [
 
 Route::group(['middleware' => 'auth'], function() {
   // Logged in users only
-  Route::get('/scoreboard', function(){
+  Route::get('/scoreboard', function() {
     return view('scoreboard');
   })->name('scoreboard');
 
@@ -22,7 +22,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 Route::group(['middleware' => 'admin'], function() {
   // Admins only
-  Route::get('/dashboard', function(){
+  Route::get('/dashboard', function() {
     return view('adminHome');
   })->name('dashboard');
 });
