@@ -76,7 +76,6 @@
                         <a href="{{ url('/scoreboard') }}">Scoreboard</a>
                         <a href="{{ url('/matches') }}">Matches</a>
                     @else
-                        <a href="{{ route('register') }}">Register</a>
                         <a href="https://www.sportsclubsc.com/">Sportsclub</a>
                         <a href="{{ route('login') }}">Player Login</a>
                         <!--<a href="{{ route('register') }}">Register</a>-->
