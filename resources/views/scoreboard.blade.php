@@ -3,7 +3,7 @@
 @section('content')
 <div class="content">
   <div class="title m-b-md">
-    League Title
+    Fall 2018 Flex League
   </div>
 
   <!--
@@ -18,8 +18,9 @@
     <div class="card-deck">
     
       <?php
-        // $matches = \App\Match::all();
-        $leagueMatches = \App\Match::where('league_name', 'Test League')->get();
+        $leagueMatches = \App\Match::all();
+        // $leagueMatches = \App\Match::all()->pluck('league_name')->unique();
+        // dd($leagueMatches);
         $leagueDivs = $leagueMatches->unique('division_name');
         $divisions = Array();
         
