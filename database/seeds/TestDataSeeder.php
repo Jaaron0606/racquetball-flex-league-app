@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class UsersTableSeeder extends Seeder
+class TestDataSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -92,7 +92,7 @@ class UsersTableSeeder extends Seeder
                 }
             }
         }
-        echo 'Users table seed success!';
+        echo 'Test data seed success!';
         echo PHP_EOL;
     }
 }
