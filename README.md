@@ -77,7 +77,13 @@ What's next?
 - [x] Can only edit matches that the logged in user is in
 - [x] protect routes with middleware
 
-- [ ] Deploy and set up league to start
+- [ ] Add B Singles to seeder
+- [ ] Add logic for double round robin matches (select divisions)
+- [ ] Merge with user logic from James
+  * User edit password and email address (profile page)
+  * Reset password with email token functionality
+- [ ] Deploy master to server and run seeder
+- [ ] Test!
  
 Future:
 - [ ] admin match edit view
