@@ -32,14 +32,13 @@
   vertical-align: middle;
 }
 
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+html, body {
+  font-size: 1rem;
+  background-color: #fff;
+  color: #636b6f;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  margin: 0;
 }
 
 .container {
@@ -51,7 +50,7 @@ html {
 }
 
 .title {
-  font-size: 84px;
+  font-size: 3rem;
 }
 
 .m-b-md {
