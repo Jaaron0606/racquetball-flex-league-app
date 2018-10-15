@@ -50,7 +50,7 @@
                 margin-top: 3rem;
             }
             .title {
-                font-size: 4rem;
+                font-size: 3rem;
     
             }
             .links > a {
