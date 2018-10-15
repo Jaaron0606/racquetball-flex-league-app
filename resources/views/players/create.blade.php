@@ -56,19 +56,19 @@ use App\css.scss
         {!! Form::open(['action' => 'UsersController@store', 'method' => 'POST']) !!}
                   <td class ="form-group">
                     {{Form::label('name', 'name')}}
-                  {{Form::text('name'), '', ['class' => 'form-control', 'placeholder' => 'Name']}}
+                  {{Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Name'])}}
                   </td>
                   <td class ="form-group">
                     {{Form::label('admin', 'Administrator')}}
-                  {{Form::text('admin'), '', ['class' => 'form-control', 'placeholder' => 'Administrator']}}
+                  {{Form::text('admin', '', ['class' => 'form-control', 'placeholder' => 'Administrator'])}}
                   </td>
                   <td class ="form-group">
                     {{Form::label('email', 'Email')}}
-                  {{Form::text('email'), '', ['class' => 'form-control', 'placeholder' => 'Email']}}
+                  {{Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'Email'])}}
                   </td>
                   <td class ="form-group">
                     {{Form::label('password', 'Password')}}
-                  {{Form::text('password'), '', ['class' => 'form-control', 'placeholder' => 'Password']}}
+                  {{Form::text('password', '', ['class' => 'form-control', 'placeholder' => 'password'])}}
                   </td>
                   {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
                   {!! Form::close() !!}

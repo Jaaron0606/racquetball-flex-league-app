@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Match;
+use App\Policies\MatchPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -14,6 +16,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'App\Model' => 'App\Policies\ModelPolicy',
+        Match::class => MatchPolicy::class,
     ];
 
     /**

@@ -98,11 +98,6 @@ use App\css.scss
 </table>
       </div>
     </div>
-<php    $userId = App\User::find(0);
-
-        echo $userId;
-        
-    ?>
   </body>
 </html>
 @endsection

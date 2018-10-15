@@ -26,7 +26,27 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    public function matches()
+    {
+        return $this->belongsToMany('App\Match')
+            ->withTimestamps();
+    }
 
+    public function generatePassword($length) {
+        $characters = 'abcdefghijklmnopqrstuvwxyz' . 
+                      'ABCDEFGHIJKLMNOPQRSTUVWXYZ' .
+                      '0123456789';
+                      
+        $password = '';
+        $limit = strlen($characters) - 1;
+        
+        for ($i = 0; $i < $length; $i++) {
+          $password .= $characters[mt_rand(0, $limit)];
+        }
+        
+        return $password;
+    }
     
     public function is_admin()
     {

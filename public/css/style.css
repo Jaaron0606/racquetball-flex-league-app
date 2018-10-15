@@ -1,50 +1,66 @@
-.card-deck {
+#scoreboard .card-deck {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-flow: row wrap-reverse;
+  align-items: flex-start;
+  flex-flow: row wrap;
 }
 
-.card {
-  min-width: 14rem;
+#scoreboard .card {
+  min-width: 16rem;
   width: 100%;
   max-width: 18rem;
 }
 
-.card-header {
+#scoreboard .card-header {
   font-size: 1.5rem;
 }
 
-.card-title {
+#scoreboard .card-title {
   font-size: 1.25rem;
 }
 
-.card-body {
+#scoreboard .card-body {
   padding: 1rem;
 }
 
-table {
-  width: 100%!important;
+.table table {
+  width: 100% !important;
+  font-size: 1rem;
 }
 
-th {
-  padding-bottom: 0.25rem;
+.table td {
+  vertical-align: middle;
 }
 
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+html, body {
+  font-size: 1rem;
+  background-color: #fff;
+  color: #636b6f;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  margin: 0;
 }
 
 .container {
-  max-width: 960px;
+  max-width: 60rem; /* 960px == 60rem*/
 }
 
+.content {
+  text-align: center;
+}
 
+.title {
+  font-size: 3rem;
+}
 
+.m-b-md {
+  margin-bottom: 30px;
+}
 
+#updateForm input {
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
