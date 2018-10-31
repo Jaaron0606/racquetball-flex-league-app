@@ -24,9 +24,11 @@ Route::group(['middleware'=> 'auth'], function(){
     return view('adminHome');
   })->name('dashboard');
   
-
+  Route::post('users/editself', 'UsersController@editself');
+  Route::post('users/updateself', 'UsersController@updateself');
   Route::resource('/users', 'UsersController');
 
   Route::resource('matches', 'MatchController');
 });
 
+ Route::get('/changePassword','PasswordController@showChangePasswordForm')->name('changepassword');

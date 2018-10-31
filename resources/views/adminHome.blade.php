@@ -23,26 +23,10 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-    <!-- Styles -->
-    <style>
-      .content {
-        text-align: center;
-      }
-
-      .title {
-        font-size: 84px;
-      }
-
-      .m-b-md {
-        margin-bottom: 30px;
-      }
-    </style>
   </head>
   <body>
     <div class="content">
-      <div class="title m-b-md">
-      </div>
-        Current League Performance
+       <h1> Administration Dashboard</h1>
       <!--
         Scoreboard block: Shows the current standings for the logged in
         users league, with the users name and point total highlighted.
@@ -61,75 +45,27 @@
             </div>
           </div>
           <div class="card border-secondary mb-3">
-            <div class="card-header">Header</div>
+            <div class="card-header">Create League</div>
             <div class="card-body text-secondary">
-              <h5 class="card-title">Secondary card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title">Under Construction</h5>
+              <p class="card-text">Create a league</p>
             </div>
           </div>
           <div class="card border-success mb-3">
-            <div class="card-header">Header</div>
+            <div class="card-header">Edit Scoreboard</div>
             <div class="card-body text-success">
-              <h5 class="card-title">Success card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title">Matches</h5>
+              <p class="card-text">You can edit the scores of every match here</p>
             </div>
           </div>
           <div class="card border-danger mb-3">
-            <div class="card-header">Header</div>
+            <div class="card-header">Pictures</div>
             <div class="card-body text-danger">
-              <h5 class="card-title">Danger card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title">Add and Remove photos</h5>
+              <p class="card-text">Under Contruction</p>
             </div>
           </div>
-          <div class="card border-warning mb-3">
-            <div class="card-header">Header</div>
-            <div class="card-body text-warning">
-              <h5 class="card-title">Warning card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-          <div class="card border-info mb-3">
-            <div class="card-header">Players</div>
-            <div class="card-body text-info">
-              <h5 class="card-title">Info card title</h5>
-              <p class="card-text">Click Here to edit users</p>
-            </div>
-          </div>
-
-          <div class="card border-dark mb-3">
-            <div class="card-header border-dark">Open/A Singles</div>
-            <div class="card-body text-dark">
-              <table>
-                <tr class="card-title">
-                  <th>Player</th>
-                  <th>Score</th>
-                  <th>Games</th>
-                </tr>
-                <tr class="card-text">
-                  <td>Kooper</td>
-                  <td>162</td>
-                  <td>3 / 7</td>
-                </tr>
-                <tr class="card-text">
-                  <td>John</td>
-                  <td>121</td>
-                  <td>3 / 7</td>
-                </tr>
-                <tr class="card-text">
-                  <td>Freddy</td>
-                  <td>90</td>
-                  <td>2 / 7</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <div class="card border-light mb-3">
-            <div class="card-header border-light">Header</div>
-            <div class="card-body text-dark">
-              <h5 class="card-title">Dark card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
+          
         </div>
       </div>
 

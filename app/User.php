@@ -35,6 +35,7 @@ class User extends Authenticatable
         return false;
     }
 
+
     // public function yes_or_no()
     //     {
     //     if (1) {

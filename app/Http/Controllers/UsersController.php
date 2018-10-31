@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 
 class UsersController extends Controller
 {
@@ -62,31 +63,19 @@ class UsersController extends Controller
         return view('players.show')->with('oneplayer', $oneplayer); 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $upplayer = User::find($id);
         return view('players.edit')->with('upplayer', $upplayer);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, $id)
     {
         $this->validate($request, [
            'name' => 'required',
            'email' => 'required',
-           'admin' => 'required'
+         //  'admin' => 'required'
     ]);
         $upplayer = User::find($id);
         $upplayer->name = $request->input('name');
@@ -94,8 +83,13 @@ class UsersController extends Controller
         $upplayer->admin = $request->input('admin');
         //$upplayer->password = bcrypt($request->input('password'));
         $upplayer->save();
-        return redirect('/users')->with('success', 'User Updated');
+        
+        if (Auth::user()->id == $upplayer->id){
+            return redirect('/');
+        }
+ else return redirect('/users')->with('success', 'User Updated');
     }
+
 
     /**
      * Remove the specified resource from storage.

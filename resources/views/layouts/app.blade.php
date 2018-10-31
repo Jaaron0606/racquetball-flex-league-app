@@ -79,7 +79,9 @@ use App\User;
                                         Dashboard
                                     </a>
                                     @endif
-                                    
+                                    <a class="dropdown-item" href="/users/{{Auth::user()->id}}/edit">
+                                        Edit Profile
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -100,6 +102,7 @@ use App\User;
     <main class="py-4">
       @yield('content')
     </main>
+    
   </div>
 </body>
 </html>
