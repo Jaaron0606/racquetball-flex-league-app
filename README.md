@@ -4,18 +4,15 @@ Setting up a website for Sportsclub Racquetball Flex Leagues.
 ## Setup users: 
 - [x] set up sqlite database (https://scotch.io/@goodnesskay/developing-locally-using-sqlite-with-laravel-on-ubuntu)
 - [x] set up admin and users roles (https://www.youtube.com/watch?v=xjLLr4WQWzw)
-- [] set up adminHome page so that admin and see users
-- [] use php artisa tinker to get to data
-
 
 ## To do in views-scaffold:
 - [x] Review user stories priorities and define critical views
 - [x] Create necessary view templates and prototype routing
 - [x] Define static pages versus interactive pages
-- [ ] Build 4 views
+- [x] Build 4 views
   - [x] Landing page (general league info)
-  - [BELOW] Users league standings (logged in landing page)
-  - [BELOW] Matches view with edit buttons (detail view with individual game scores)
+  - [x] Users league standings (logged in landing page)
+  - [x] Matches view with edit buttons (detail view with individual game scores)
   - [x] Match score enter view (form)
 - [x] How to deal with hosting the database on Heroku alongside the app?
   * This could be sqlite, so we don't need a mySQL server
@@ -77,14 +74,16 @@ What's next?
 - [x] Can only edit matches that the logged in user is in
 - [x] protect routes with middleware
 
-- [ ] Add B Singles to seeder
-- [ ] Add logic for double round robin matches (select divisions)
+- [x] Add B Singles to seeder
+- [x] Add logic for double round robin matches (select divisions)
+  D and A play twice
+
 - [ ] Merge with user logic from James
   * User edit password and email address (profile page)
   * Reset password with email token functionality
 - [ ] Deploy master to server and run seeder
 - [ ] Test!
- 
+
 Future:
 - [ ] admin match edit view
   * Matches by league (current league default)
@@ -92,4 +91,11 @@ Future:
   * batch upload feature?
   * Doubles leagues
 - [ ] Add a count for matches played (logic?)
+- [ ] Add data validation for match score entry
   * Add a visual +5 reminder?
+- [ ] Fix loginController logic
+  * https://stackoverflow.com/questions/42177044/laravel-5-4-redirection-to-custom-url-after-login
+
+Cannot deal with:
+- C,GroupA plays against the same position person from C,GroupB
+- Both Cs also play another person unassigned!
