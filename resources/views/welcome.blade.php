@@ -6,19 +6,6 @@
 
 @section('content')
   <div class="flex-center position-ref">
-    <!--@if (Route::has('login'))-->
-    <!--  <div class="top-right links">-->
-    <!--    @auth-->
-    <!--      <a href="{{ url('/scoreboard') }}">Scoreboard</a>-->
-    <!--      <a href="{{ url('/matches') }}">Matches</a>-->
-    <!--    @else-->
-    <!--      <a href="https://www.sportsclubsc.com/">Sportsclub</a>-->
-    <!--      <a href="{{ route('login') }}">Player Login</a>-->
-          <!--<a href="{{ route('register') }}">Register</a>-->
-    <!--    @endauth-->
-    <!--  </div>-->
-    <!--@endif-->
-      
     <div class="content">
       @if (\Session::has('error'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
