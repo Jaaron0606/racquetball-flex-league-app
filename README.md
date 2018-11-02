@@ -78,13 +78,16 @@ What's next?
 - [x] Add logic for double round robin matches (select divisions)
   D and A play twice
 
-- [ ] Merge with user logic from James
-  * User edit password and email address (profile page)
-  * Reset password with email token functionality
-- [ ] Deploy master to server and run seeder
-- [ ] Test!
+November 1st
+- [x] Reset password with email token functionality
+- [x] Deploy master to server and run seeder
+- [x] Test!
 
 Future:
+- [ ] Add message on password reset success (welcome page)
+- [ ] Redirect to login screen (with message) after sending reset email
+- [ ] Merge with user logic from James
+  * User edit password and email address (profile page)
 - [ ] admin match edit view
   * Matches by league (current league default)
   * Input last league data...
