@@ -19,8 +19,6 @@
     
       <?php
         $leagueMatches = \App\Match::all();
-        // $leagueMatches = \App\Match::all()->pluck('league_name')->unique();
-        // dd($leagueMatches);
         $leagueDivs = $leagueMatches->unique('division_name');
         $divisions = Array();
         
@@ -57,7 +55,6 @@
           $scoreboard[$division] = $player_scores;
         }
         
-        // dd($scoreboard);
       ?>
       
       @foreach ($scoreboard as $division_name => $division_totals)

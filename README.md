@@ -75,14 +75,15 @@ What's next?
 - [x] protect routes with middleware
 
 - [x] Add B Singles to seeder
-- [ ] Add logic for double round robin matches (select divisions)
+- [x] Add logic for double round robin matches (select divisions)
+  D and A play twice
+
 - [ ] Merge with user logic from James
   * User edit password and email address (profile page)
   * Reset password with email token functionality
 - [ ] Deploy master to server and run seeder
 - [ ] Test!
-- [ ] Fix loginController logic
-  * https://stackoverflow.com/questions/42177044/laravel-5-4-redirection-to-custom-url-after-login
+
 Future:
 - [ ] admin match edit view
   * Matches by league (current league default)
@@ -90,4 +91,11 @@ Future:
   * batch upload feature?
   * Doubles leagues
 - [ ] Add a count for matches played (logic?)
+- [ ] Add data validation for match score entry
   * Add a visual +5 reminder?
+- [ ] Fix loginController logic
+  * https://stackoverflow.com/questions/42177044/laravel-5-4-redirection-to-custom-url-after-login
+
+Cannot deal with:
+- C,GroupA plays against the same position person from C,GroupB
+- Both Cs also play another person unassigned!
