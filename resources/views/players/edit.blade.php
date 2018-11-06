@@ -58,7 +58,6 @@ use App\css.scss
                   {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
                   {!! Form::close() !!}
     </p>
-    
       </div>
     </div>
   </body>

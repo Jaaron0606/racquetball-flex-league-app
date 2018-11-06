@@ -12,12 +12,11 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var arrays
      */
     protected $fillable = [
         'name', 'email', 'password',
     ];
-
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -54,7 +53,7 @@ class User extends Authenticatable
         { return true;}
         return false;
     }
-
+}
 
     // public function yes_or_no()
     //     {
@@ -62,13 +61,3 @@ class User extends Authenticatable
     //         $updating = $dbConnect->query(UPDATE User SET admin=1 WHERE name='James admin'); }
     //     else (UPDATE user SET admin=1 WHERE name='James admin';)
     //     }
-    
-    
-    
-    public function matches()
-    {
-        return $this->belongsToMany('App\Match')
-            ->withTimestamps();
-    }
-}
-
