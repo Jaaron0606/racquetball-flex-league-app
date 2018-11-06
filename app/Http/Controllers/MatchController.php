@@ -80,6 +80,8 @@ class MatchController extends Controller
    */
   public function edit(Match $match)
   {
+    $this->authorize('update', $match);
+    
     $games = $match->games->toArray();
     return view('matches.updateScores', compact('match', 'games'));
   }
@@ -93,6 +95,8 @@ class MatchController extends Controller
    */
   public function update(Request $request, Match $match)
   {
+    $this->authorize('update', $match);
+    
     $games = $match->games;
     
     // Calculate match total
@@ -109,9 +113,12 @@ class MatchController extends Controller
       $game->save();
       
       // Add 5 points to game winner and add to match total
-      $p1_score > $p2_score ? $p1_score += 5 : $p2_score += 5;
-      $p1_total += $p1_score;
-      $p2_total += $p2_score;
+      // Only if the scores aren't 0, so you can reset a game score
+      if ($p1_score != 0 || $p2_score != 0) {
+        $p1_score > $p2_score ? $p1_score += 5 : $p2_score += 5;
+        $p1_total += $p1_score;
+        $p2_total += $p2_score;  
+      }
     }
     
     // Update Match model

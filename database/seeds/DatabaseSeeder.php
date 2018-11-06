@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UsersTableSeeder::class);
+        $this->call(FallLeagueSeeder::class);
+        
+        // Adds fake users and a test league
+        // Adds completed and incomplete matches
+        // $this->call(TestDataSeeder::class);
     }
 }

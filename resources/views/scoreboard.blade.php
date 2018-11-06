@@ -3,7 +3,7 @@
 @section('content')
 <div class="content">
   <div class="title m-b-md">
-    League Title
+    Fall 2018 Flex League
   </div>
 
   <!--
@@ -18,8 +18,7 @@
     <div class="card-deck">
     
       <?php
-        // $matches = \App\Match::all();
-        $leagueMatches = \App\Match::where('league_name', 'Test League')->get();
+        $leagueMatches = \App\Match::all();
         $leagueDivs = $leagueMatches->unique('division_name');
         $divisions = Array();
         
@@ -56,7 +55,10 @@
           $scoreboard[$division] = $player_scores;
         }
         
+<<<<<<< HEAD
         // dd($scoreboard);
+=======
+>>>>>>> 717b27d453a3e497e2fb88ea7d50a9d7c829b659
       ?>
       
       @foreach ($scoreboard as $division_name => $division_totals)
@@ -80,19 +82,9 @@
               
             </table>
           </div>
-        </div>
+        </div>  
       @endforeach
-      
     </div>
   </div>
-
-  <!--
-    User match history block: Shows the users individual matches,
-    sorted by schedule week (earliest first). The user can see the
-    her match score and her opponent's match score, as well as an
-    edit button that links to the updateScores form.
-    
-    Matches without scores yet reported are clearly marked.
-  -->
 </div>
 @endsection
