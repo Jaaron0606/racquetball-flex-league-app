@@ -82,6 +82,9 @@ use App\User;
                                     <a class="dropdown-item" href="/users/{{Auth::user()->id}}/edit">
                                         Edit Profile
                                     </a>
+                                    <a class="dropdown-item" href="/users/{{Auth::user()->id}}/changepassword/">
+                                        Change Password
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

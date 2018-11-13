@@ -55,10 +55,7 @@
           $scoreboard[$division] = $player_scores;
         }
         
-<<<<<<< HEAD
-        // dd($scoreboard);
-=======
->>>>>>> 717b27d453a3e497e2fb88ea7d50a9d7c829b659
+
       ?>
       
       @foreach ($scoreboard as $division_name => $division_totals)

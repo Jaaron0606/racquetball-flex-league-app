@@ -44,7 +44,7 @@ class UsersController extends Controller
     ]);
         $newplayer = new User;
         $newplayer->name = $request->input('name');
-        $newplayer->email = $request->input('email');
+        $newplayer->email = strtolower($request->input('email'));
         $newplayer->admin = $request->input('admin');
         $newplayer->password = bcrypt($request->input('password'));
         $newplayer->save();
@@ -76,16 +76,17 @@ class UsersController extends Controller
            'name' => 'required',
            'email' => 'required',
          //  'admin' => 'required'
+            //'password' => 'required',
     ]);
         $upplayer = User::find($id);
         $upplayer->name = $request->input('name');
-        $upplayer->email = $request->input('email');
+        $upplayer->email = strtolower($request->input('email'));
         $upplayer->admin = $request->input('admin');
-        //$upplayer->password = bcrypt($request->input('password'));
+        $upplayer->password = bcrypt($request->input('password'));
         $upplayer->save();
         
         if (Auth::user()->id == $upplayer->id){
-            return redirect('/');
+            return redirect('/dashboard')->with('success', 'User Updated');
         }
  else return redirect('/users')->with('success', 'User Updated');
     }
@@ -97,8 +98,33 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+     
+     
+    public function destroy()
+    {   
+
+    } 
+     
+    public function showChangePasswordForm($id)
+    {   $upplayer = User::find($id);
+        return view('players.changepassword')->with('upplayer', $upplayer);
     }
+    
+    public function updatePassword(Request $request, $id)
+    {
+        $this->validate($request, [
+           'name' => 'required',
+           'email' => 'required',
+         //  'admin' => 'required'
+            'password' => 'required',
+    ]);
+        $upplayer = User::find($id);
+        //$upplayer->name = $request->input('name');
+        //$upplayer->email = strtolower($request->input('email'));
+        //$upplayer->admin = $request->input('admin');
+    
+        $upplayer->password = bcrypt($request->input('password'));
+        $upplayer->save();
+        return redirect('/dashboard')->with('success', 'Password Updated');
+}
 }

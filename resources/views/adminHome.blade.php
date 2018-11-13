@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@include('inc.messages')
 @section('content')
 
 <!doctype html>
@@ -68,15 +69,6 @@
           
         </div>
       </div>
-
-      <!--
-        User match history block: Shows the users individual matches,
-        sorted by schedule week (earliest first). The user can see the
-        her match score and her opponent's match score, as well as an
-        edit button that links to the updateScores form.
-        
-        Matches without scores yet reported are clearly marked.
-      -->
     </div>
   </body>
 </html>

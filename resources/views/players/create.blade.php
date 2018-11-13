@@ -58,9 +58,9 @@ use App\css.scss
                     {{Form::label('name', 'name')}}
                   {{Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Name'])}}
                   </td>
-                  <td class ="form-group">
+                   <td class ="form-group">
                     {{Form::label('admin', 'Administrator')}}
-                  {{Form::text('admin', '', ['class' => 'form-control', 'placeholder' => 'Administrator'])}}
+                  {{Form::select('admin', array('1' => 'YES', '0' => 'NO'), ['class' => 'form-control', 'placeholder' => 'admin'])}}
                   </td>
                   <td class ="form-group">
                     {{Form::label('email', 'Email')}}

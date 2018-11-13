@@ -9,6 +9,10 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public function setEmailAttribute($value)
+    {
+    $this->attributes['email'] = strtolower($value);
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -46,6 +50,8 @@ class User extends Authenticatable
         
         return $password;
     }
+    
+    
     
     public function is_admin()
     {
